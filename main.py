@@ -24,7 +24,9 @@ while True:
         }
     }
     if account_typed in account_list and password_typed == account_list[account_typed]['password']:
-        os.system('cls'if os.name == 'nt' else' clear')
+        clear = 'cls'if os.name == 'nt' else' clear'
+        os.system(clear)
+
         print("*********************************************")
         print("***************Caixa Eletrônico**************")
         print("*********************************************")
@@ -36,4 +38,5 @@ while True:
         print('Conta Inválida')
 
     input('Pressione <ENTER> para continuar...')
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear = 'cls'if os.name == 'nt' else' clear'
+    os.system(clear)
