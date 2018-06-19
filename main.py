@@ -50,6 +50,7 @@ while True:
 
         print("1 - Saldo")
         print("2 - saque")
+        print("3 - Deposito")
         if account_list[account_typed]['admin']:
             print("10 - Incluir Cédula")
         option_typed = input('Escolha uma opção acima: ')
@@ -81,8 +82,16 @@ while True:
             if value_int != 0:
                 print("O caixa não tem cédula disponível para este valor")
             else:
+                for money_bill in money_slips_user:
+                    money_slips[money_bill] -= money_slips_user[money_bill]
                 print('Pegue as notas: ')
                 print(money_slips_user)
+
+        elif option_typed == '3':
+            deposit_typed = int(input('Digite o valor a ser depositado: '))
+            value_balance = account_list[account_typed]["value"] + (deposit_typed)
+
+            print('Seu saldo atual e de %s' % value_balance)
     else:
         print('Conta Inválida')
 
